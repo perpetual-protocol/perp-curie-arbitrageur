@@ -1,0 +1,36 @@
+{
+    "PRICE_CHECK_INTERVAL_SEC": 5,
+    "BALANCE_CHECK_INTERVAL_SEC": 10,
+
+    "ARBITRAGE_MAX_GAS_FEE_ETH": 0.02,
+    "BALANCE_MAX_GAS_FEE_ETH": 0.1,
+
+    "PERP_MIN_MARGIN_RATIO": 0.2,
+    "FTX_MIN_MARGIN_RATIO": 0.2,
+
+    "PERP_EMERGENCY_MARGIN_RATIO": 0.1,
+    "FTX_EMERGENCY_MARGIN_RATIO": 0.1,
+
+    "EMERGENCY_REDUCE_AMOUNT": 9000,
+    "EMERGENCY_REDUCE_SLEEP_SEC": 10,
+    "EMERGENCY_REDUCE_CHECK_INTERVAL_SEC": 1,
+
+    "MARKET_MAP": {
+        "vBTC": {
+            "IS_ENABLED": true,
+            "FTX_MARKET_NAME": "BTC-PERP",
+            "ORDER_AMOUNT": 1000,
+            "SHORT_TRIGGER_SPREAD": 0.005,
+            "LONG_TRIGGER_SPREAD": -0.005,
+            "IS_EMERGENCY_REDUCE_MODE_ENABLED": true
+        },
+        "vPERP": {
+            "IS_ENABLED": true,
+            "FTX_MARKET_NAME": "PERP-PERP",
+            "ORDER_AMOUNT": 1000,
+            "SHORT_TRIGGER_SPREAD": 0.005,
+            "LONG_TRIGGER_SPREAD": -0.005,
+            "IS_EMERGENCY_REDUCE_MODE_ENABLED": true
+        }
+    }
+}
