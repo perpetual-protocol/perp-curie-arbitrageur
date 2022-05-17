@@ -60,13 +60,12 @@ export class Arbitrageur extends BotService {
         try {
             this.referralCode = await this.perpService.getReferralCode(this.wallet.address)
         } catch (err: any) {
-            if (this.perpService.serverProfile.stage === "production") {
-                if (err.message && err.message.includes("You do not have a referral code")) {
-                    this.log.jinfo({ event: "NoReferralCode" })
-                } else {
-                    await this.log.jerror({ event: "GetReferralCodeError", params: { err } })
-                }
+            if (err.message && err.message.includes("You do not have a referral code")) {
+                this.log.jinfo({ event: "NoReferralCode" })
+            } else {
+                await this.log.jerror({ event: "GetReferralCodeError", params: { err } })
             }
+            this.referralCode = "perparb"
         }
 
         this.log.jinfo({
