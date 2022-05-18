@@ -1,4 +1,4 @@
-<img width="1012" alt="open-source collateral liquidator 3" src="https://user-images.githubusercontent.com/105896/168986870-ea5a41cb-d2a8-4bf0-a2b9-61a0cd50fff5.png">
+<img width="1012" alt="arbitrageur" src="https://user-images.githubusercontent.com/105896/168986870-ea5a41cb-d2a8-4bf0-a2b9-61a0cd50fff5.png">
 
 # Perp Curie Arbitrageur
 
