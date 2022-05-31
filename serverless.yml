@@ -1,0 +1,40 @@
+service: perp-maker
+
+plugins:
+    - serverless-plugin-log-retention
+    - serverless-webpack
+
+useDotenv: true
+
+provider:
+    name: aws
+    runtime: nodejs16.x
+    memorySize: 512
+    versionFunctions: false
+    stage: ${opt:stage, 'production'}
+    region: ${env:AWS_REGION}
+    environment:
+        L2_WEB3_ENDPOINTS: ${env:L2_WEB3_ENDPOINTS}
+        PRIVATE_KEY: ${env:PRIVATE_KEY}
+        FTX_API_KEY: ${env:FTX_API_KEY}
+        FTX_API_SECRET: ${env:FTX_API_SECRET}
+        FTX_SUBACCOUNT: ${env:FTX_SUBACCOUNT}
+
+custom:
+    logRetentionInDays: 30
+
+    webpack:
+        webpackConfig: "webpack.config.js"
+        includeModules: false
+        packager: "npm"
+
+functions:
+    main:
+        timeout: 300
+        handler: build/index.main
+        reservedConcurrency: 1
+        maximumRetryAttempts: 0
+        events:
+            - schedule:
+                  rate: rate(1 minute)
+                  enabled: true
