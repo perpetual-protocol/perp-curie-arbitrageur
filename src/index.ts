@@ -7,7 +7,7 @@ import { Arbitrageur } from "./arbitrageur/Arbitrageur"
 
 initLog()
 
-async function main(): Promise<void> {
+export async function main(): Promise<void> {
     process.env["STAGE"] = "production"
     process.env["NETWORK"] = "optimism"
 
