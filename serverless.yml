@@ -1,23 +1,19 @@
-service: perp-arbitrageur-2
+service: perp-arbitrageur
 
 plugins:
     - serverless-plugin-log-retention
     - serverless-webpack
-    - serverless-deployment-bucket
 
 useDotenv: true
 
 provider:
     name: aws
+    stackName: ${self:service}
     runtime: nodejs16.x
     memorySize: 512
     versionFunctions: false
     stage: ${opt:stage, 'production'}
-    region: ${env:AWS_REGION}
-    deploymentBucket:
-        blockPublicAccess: true
-        name: perp-serverless-deployment-${opt:stage, 'staging'}
-        serverSideEncryption: AES256
+    region: ${env:AWS_REGION, 'us-east-1'}
     environment:
         L2_WEB3_ENDPOINTS: ${env:L2_WEB3_ENDPOINTS}
         PRIVATE_KEY: ${env:PRIVATE_KEY}
@@ -32,14 +28,6 @@ custom:
         webpackConfig: "webpack.config.js"
         includeModules: false
         packager: "npm"
-
-    deploymentBucket:
-        versioning: true
-        accelerate: true # this is required
-        blockPublicAccess: true
-        tags:
-            - Key: Environment
-              Value: ${opt:stage, 'staging'}
 
 functions:
     main:

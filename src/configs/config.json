@@ -19,15 +19,15 @@
         "vBTC": {
             "IS_ENABLED": true,
             "FTX_MARKET_NAME": "BTC-PERP",
-            "ORDER_AMOUNT": 50,
+            "ORDER_AMOUNT": 1000,
             "SHORT_TRIGGER_SPREAD": 0.005,
             "LONG_TRIGGER_SPREAD": -0.005,
             "IS_EMERGENCY_REDUCE_MODE_ENABLED": true
         },
-        "vETH": {
+        "vPERP": {
             "IS_ENABLED": true,
-            "FTX_MARKET_NAME": "ETH-PERP",
-            "ORDER_AMOUNT": 50,
+            "FTX_MARKET_NAME": "PERP-PERP",
+            "ORDER_AMOUNT": 1000,
             "SHORT_TRIGGER_SPREAD": 0.005,
             "LONG_TRIGGER_SPREAD": -0.005,
             "IS_EMERGENCY_REDUCE_MODE_ENABLED": true
