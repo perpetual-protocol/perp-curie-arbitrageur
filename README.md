@@ -89,3 +89,20 @@ $ env $(cat .env | grep -v '#' | xargs) npm run start
 $ docker build -f arbitrageur.Dockerfile -t perp-arbitrageur .
 $ docker run --env-file ./.env perp-arbitrageur
 ```
+
+## Deployment
+
+### AWS Lambda
+
+Prerequisite
+
+-   `~/.aws/credentials` should have default profile with `aws_access_key_id` and `aws_secret_access_key`
+-   copy `.env.example` to `.env`
+-   Fill in envs in `.env`
+
+Deploy
+
+```bash
+npm run build
+npm run sls:deploy
+```
