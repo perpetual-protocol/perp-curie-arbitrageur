@@ -34,6 +34,7 @@ export async function main(): Promise<void> {
     await arbitrageur.start()
 }
 
-if (require.main === module) {
+const isInLambda = !!process.env.LAMBDA_RUNTIME_DIR
+if (require.main === module && !isInLambda) {
     main()
 }
