@@ -14,7 +14,7 @@ A simple arbitrageur strategy for perpetual protocol v2. Please note that it use
 ```bash
 $ git clone https://github.com/perpetual-protocol/perp-curie-arbitrageur.git
 $ cd perp-curie-arbitrageur
-$ npm install
+$ npm install --leagacy-peers-dep
 $ npm run build
 ```
 
