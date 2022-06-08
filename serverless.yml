@@ -31,11 +31,10 @@ custom:
 
 functions:
     main:
-        timeout: 300
+        timeout: 290 # timeout before next lambda execution to prevent concurrency
         handler: build/index.main
-        reservedConcurrency: 1
         maximumRetryAttempts: 0
         events:
             - schedule:
-                  rate: rate(1 minute)
+                  rate: rate(5 minutes)
                   enabled: true
