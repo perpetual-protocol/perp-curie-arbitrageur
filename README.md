@@ -6,19 +6,23 @@ A simple arbitrageur strategy for perpetual protocol v2. Please note that it use
 
 ## Requirement
 
--   `npm >= 7`
+-   `npm >= 7 <= 7.24.1`
 -   `nodejs >= 16`
+
+> **Warning**
+> Check your npm version by using `npm -v`. It must be within the range of `v7.0.0` ~ `v7.24.1`. `v7.24.1` is recommended. Using the versions > `7.24.1` to install packages will get stuck. To install or reinstall npm, run `npm install -g npm@7.x.x`
 
 ## Installation
 
 ```bash
 $ git clone https://github.com/perpetual-protocol/perp-curie-arbitrageur.git
 $ cd perp-curie-arbitrageur
-$ npm install --leagacy-peers-dep
+$ npm install
 $ npm run build
 ```
 
 ## Configuration
+
 Edit the trading parameters in `src/configs/config.json`:
 
 ```javascript
@@ -64,6 +68,7 @@ Edit the trading parameters in `src/configs/config.json`:
 ```
 
 ## Environment Variables
+
 Provide your endpoint(s) and API keys in `.env`:
 
 ```bash
